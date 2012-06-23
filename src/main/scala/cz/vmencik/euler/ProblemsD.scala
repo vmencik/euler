@@ -144,3 +144,8 @@ object Problem15 extends App {
   
   println(p(40, 20))
 }
+
+object Problem16 extends App {
+  val x = BigInt(2).pow(1000).toString.view.map(_.asDigit).sum
+  println(x)
+}
