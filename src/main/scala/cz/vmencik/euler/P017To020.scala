@@ -2,6 +2,7 @@ package cz.vmencik.euler
 
 import scala.Array.canBuildFrom
 import scala.io.Source
+import java.util.Calendar
 
 object Problem17 extends App {
 
@@ -47,4 +48,24 @@ object Problem18And67 extends App {
   
   println(totals.max)
   
+}
+
+object Problem19 extends App {
+  val c = Calendar.getInstance
+  c.set(1901, Calendar.JANUARY, 1)
+  
+  var r = 0;
+  while (c.get(Calendar.YEAR) < 2001) {
+    if (c.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY) {
+      r += 1
+    }
+    c.add(Calendar.MONTH, 1)
+  }
+  println(r)
+}
+
+object Problem20 extends App {
+  val fact100 = Range.BigInt.inclusive(1, 100, 1).product
+  val r = fact100.toString.view.map(_.asDigit).sum
+  println(r)
 }
